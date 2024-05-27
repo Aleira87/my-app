@@ -1,8 +1,13 @@
-import { Component, input, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { Component } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from '../products/products.component';
+import { ProductsService } from '../services/products.service';
+import { CommonModule } from '@angular/common';
+import { Product } from '../interfaces/product';
+
 
 @Component({
   standalone: true,
@@ -11,7 +16,8 @@ import { ProductsComponent } from '../products/products.component';
     RouterLink, 
     NgbAlert, 
     FormsModule,
-    ProductsComponent
+    ProductsComponent,
+    CommonModule
   ],
   selector: 'app-navbar',
   templateUrl: "nav-bar.component.html",
@@ -19,6 +25,23 @@ import { ProductsComponent } from '../products/products.component';
 })
 export class NavbarComponent {
 
-   @Input() filtro: string= "";
+  searchQuery: string = '';
+  searchResults: Product[] = [];
+
+  constructor(private productService: ProductsService) {}
+
+  search() {
+    this.productService.searchProducts(this.searchQuery).subscribe(results => {
+      this.searchResults = results;
+      console.log(results);
+    
+    });
+  // constructor(private productService:ProductsService) {};
   
+  // onSearch(event: Event) {
+  //   const input = event.target as HTMLInputElement;
+  //   this.productService.updateSearchTerm(input.value);
+  // }
+  }
  }
+

@@ -1,3 +1,4 @@
+
 import { ProductsService } from './../services/products.service';
 import { LowerCasePipe, NgFor, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
@@ -7,6 +8,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import dogs from '../data/products';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../interfaces/product';
+
 
 
 @Component({
@@ -30,13 +32,20 @@ export class ProductsComponent implements OnInit{
  cards=dogs;
 
  @Input() filtro: string= "";
+ @Input() searchQuery: string = "";
+ @Input() searchResults: Product[] = [];
  
  products: Product[] = [];
 ngOnInit(): void {
     this.ProductsService.getProducts().subscribe(data => {
       this.products = data;
     });
+
+    // this.ProductsService.searchProducts().subscribe(data => {
+    //   this.products = data;
+    // });
 }
- constructor(private ProductsService: ProductsService) { }
+ constructor(private ProductsService: ProductsService, ) { }
+ 
   
 }

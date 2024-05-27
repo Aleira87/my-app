@@ -30,20 +30,18 @@
 
 <div class="container-fluid">
   <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
-  <input
+  <!-- <input
     class="form-control me-2"
     type="search"
     placeholder="Search"
     aria-label="Search"
     [(ngModel)]="filtro"
-  />
+  /> -->
 
   @for(product of products; track $index){
-  <div
-    class="card width: 18rem"
-    style="width: 18rem"
-    *ngIf="product.denominazione.toLocaleLowerCase().includes(filtro)"
-  >
+  <div class="card width: 18rem" style="width: 18rem">
+    <!-- *ngIf="product.denominazione.toLocaleLowerCase().includes(filtro)" -->
+
     <div>
       <!-- <img
         src="{{ card.img_url }}"

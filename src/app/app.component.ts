@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({ // decoratore aggiunge proprietà alla classe
   standalone: true,
