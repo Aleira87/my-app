@@ -1,6 +1,6 @@
 import { ProductsService } from './../services/products.service';
 import { LowerCasePipe, NgFor, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
@@ -28,7 +28,9 @@ import { Product } from '../interfaces/product';
 })
 export class ProductsComponent implements OnInit{ 
  cards=dogs;
- filtro: string= "";
+
+ @Input() filtro: string= "";
+ 
  products: Product[] = [];
 ngOnInit(): void {
     this.ProductsService.getProducts().subscribe(data => {

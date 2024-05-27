@@ -29,6 +29,15 @@
 </div> -->
 
 <div class="container-fluid">
+  <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
+  <input
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    [(ngModel)]="filtro"
+  />
+
   @for(product of products; track $index){
   <div
     class="card width: 18rem"
