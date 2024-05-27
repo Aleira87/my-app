@@ -1,20 +1,56 @@
+<!-- <div class="container-fluid">
+  <div class="grid">
+    <div class="card" *ngFor="let card of cards">
+      <div *ngIf="card.title.toLocaleLowerCase().includes(filtro)">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ card.title | titlecase }}</mat-card-title>
+            <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            src="{{ card.img_url }}"
+            alt="Photo of a Shiba Inu"
+          />
+          <mat-card-content>
+            <p>
+              {{ card.description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="container-fluid">
+  @for(product of products; track $index){
+  <div
+    class="card width: 18rem"
+    style="width: 18rem"
+    *ngIf="product.denominazione.toLocaleLowerCase().includes(filtro)"
+  >
+    <div>
+      <!-- <img
+        src="{{ card.img_url }}"
+        class="card-img-top"
+        alt="Photo of a Shiba Inu"
+      /> -->
+
+      <div class="card-body">
+        <h5 class="card-title">{{ product.denominazione | titlecase }}</h5>
+        <h6 class="card-subtitle">{{ product.indirizzo }}</h6>
+        <p class="card-text">
+          {{ product.citta }}
+        </p>
+        <a href="#" class="btn btn-primary">Accattatevillo</a>
+      </div>
+    </div>
+  </div>
+  }
+</div>
