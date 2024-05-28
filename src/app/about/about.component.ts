@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+  premimi(): void {
+    alert("Continuo ad essere totalmente inutile!");
+  };
 }

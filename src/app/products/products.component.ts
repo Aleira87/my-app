@@ -31,21 +31,28 @@ import { Product } from '../interfaces/product';
 export class ProductsComponent implements OnInit{ 
  cards=dogs;
 
- @Input() filtro: string= "";
- @Input() searchQuery: string = "";
- @Input() searchResults: Product[] = [];
- 
  products: Product[] = [];
+ filteredProducts: Product[] = [];
+ filtro: string= ""
+
+ constructor(private ProductsService: ProductsService, ) { }
 ngOnInit(): void {
     this.ProductsService.getProducts().subscribe(data => {
       this.products = data;
+      this.filteredProducts = data;
+    });
+
+    this.ProductsService.search$.subscribe(term => {
+      this.filteredProducts = this.products.filter(product => 
+        product.denominazione.toLowerCase().includes(term.toLowerCase())
+      );
     });
 
     // this.ProductsService.searchProducts().subscribe(data => {
     //   this.products = data;
     // });
 }
- constructor(private ProductsService: ProductsService, ) { }
+
  
   
 }

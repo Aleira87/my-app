@@ -9,23 +9,24 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 })
 export class ProductsService {  
 
+  constructor(private http: HttpClient) { }
   private url: string = "https://server-node-igna.vercel.app/shops";
   private searchSubject = new BehaviorSubject<string>('');
-
-  constructor(private http: HttpClient) { }
+  search$ = this.searchSubject.asObservable();
+ 
   
   getProducts(): Observable<Product[]> { //Observable osserva la richiesta e appena arriva "risponde"
     return this.http.get<Product[]>(this.url)}
 
-  // updateSearchTerm(term: string) {
-  //   this.searchSubject.next(term);
-  // } 
+  updateSearchTerm(term: string) {
+    this.searchSubject.next(term);
+  } 
 
-  searchProducts(query: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.url).pipe(
-      map(products => products.filter(product =>
-        product.denominazione.toLowerCase().includes(query.toLowerCase())
-      ))
-    );
-}  
+  // searchProducts(query: string): Observable<Product[]> {
+  //   return this.http.get<Product[]>(this.url).pipe(
+  //     map(products => products.filter(product =>
+  //       product.denominazione.toLowerCase().includes(query.toLowerCase())
+  //     ))
+  //   );
+// }  
 }

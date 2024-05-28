@@ -9,4 +9,22 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+    premimi(): void {
+    alert("Te l'avevo detto che sono inutile!");
+    
+
+  // intervalHandler:any;
+
+  // message: string = "CIAO Mondo!";
+  // ngOnInit(): void {
+  //   this.intervalHandler=setInterval(() => {
+  //     this.message = "CIAO Mondo! "+Math.random();
+  //   },1000)
+  // }
+
+  // ngOnDestroy(): void {
+  //   clearInterval(this.intervalHandler);
+  // }
+
+}
 }

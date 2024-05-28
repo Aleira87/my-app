@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  premimi(): void {
+    alert("SMETTILA! Ti ho detto che non funziono!!");
+  };
 }

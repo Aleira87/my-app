@@ -28,7 +28,7 @@
   </div>
 </div> -->
 
-<div class="container-fluid">
+<div class="container">
   <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
   <!-- <input
     class="form-control me-2"
@@ -38,7 +38,7 @@
     [(ngModel)]="filtro"
   /> -->
 
-  @for(product of products; track $index){
+  @for(product of filteredProducts; track $index){
   <div class="card width: 18rem" style="width: 18rem">
     <!-- *ngIf="product.denominazione.toLocaleLowerCase().includes(filtro)" -->
 
