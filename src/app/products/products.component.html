@@ -29,8 +29,9 @@
 </div> -->
 
 <div class="container">
-  <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
-  <!-- <input
+  <div class="card-deck">
+    <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
+    <!-- <input
     class="form-control me-2"
     type="search"
     placeholder="Search"
@@ -38,26 +39,18 @@
     [(ngModel)]="filtro"
   /> -->
 
-  @for(product of filteredProducts; track $index){
-  <div class="card width: 18rem" style="width: 18rem">
-    <!-- *ngIf="product.denominazione.toLocaleLowerCase().includes(filtro)" -->
+    @for(product of filteredProducts; track $index){
 
-    <div>
-      <!-- <img
-        src="{{ card.img_url }}"
-        class="card-img-top"
-        alt="Photo of a Shiba Inu"
-      /> -->
-
-      <div class="card-body">
-        <h5 class="card-title">{{ product.denominazione | titlecase }}</h5>
-        <h6 class="card-subtitle">{{ product.indirizzo }}</h6>
+    <div class="card border-info mb-2">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body text-primary-emphasis">
+        <h5 class="card-title">{{ product.denominazione }}</h5>
+        <p class="card-text">{{ product.indirizzo }}</p>
         <p class="card-text">
-          {{ product.citta }}
+          <small class="text-muted">{{ product.citta }}</small>
         </p>
-        <a href="#" class="btn btn-primary">Accattatevillo</a>
       </div>
     </div>
+    }
   </div>
-  }
 </div>

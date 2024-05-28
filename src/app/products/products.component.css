@@ -1,32 +1,18 @@
-.example-card {
-  max-width: 400px;
+
+.card-deck {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
   margin: 10px;
-  padding: 5px;
+  
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
 
-.grid {
-  display: flex;
-  justify-content: space-between;
-}
-
-p {
-  padding: 5px;
-  font-style: normal;
-}
 .card {
-  max-width: 300px;
+  max-width: 250px;
   width: 100%;
-  display: inline-block;
   padding-bottom: 5px;
-  margin: 15px;
+  margin: 10px;
+  ;
 }
-
-.mat-mdc-card-content{
-  min-height: 12rem;
-  max-height: 12rem;
-}
+ 
