@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
   template: `
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
+  
   `,
   styles: []
 })

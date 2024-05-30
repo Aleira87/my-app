@@ -1,13 +1,14 @@
 
 import { ProductsService } from './../services/products.service';
 import { LowerCasePipe, NgFor, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import dogs from '../data/products';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../interfaces/product';
+import { ProductComponent } from '../product/product.component';
 
 
 
@@ -23,7 +24,8 @@ import { Product } from '../interfaces/product';
     UpperCasePipe,
     TitleCasePipe,
     LowerCasePipe,
-    FormsModule
+    FormsModule,
+    ProductComponent
     ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
@@ -44,15 +46,12 @@ ngOnInit(): void {
 
     this.ProductsService.search$.subscribe(term => {
       this.filteredProducts = this.products.filter(product => 
-        product.denominazione.toLowerCase().includes(term.toLowerCase())
+        product.denominazione.toLowerCase().startsWith(term.toLowerCase())
       );
     });
-
-    // this.ProductsService.searchProducts().subscribe(data => {
-    //   this.products = data;
-    // });
 }
 
- 
-  
+handleEvent(event: string) {
+  console.log(event);
+}
 }

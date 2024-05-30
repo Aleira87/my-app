@@ -1,55 +1,20 @@
-<!-- <div class="container-fluid">
-  <div class="grid">
-    <div class="card" *ngFor="let card of cards">
-      <div *ngIf="card.title.toLocaleLowerCase().includes(filtro)">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ card.title | titlecase }}</mat-card-title>
-            <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
-          </mat-card-header>
-          <img
-            mat-card-image
-            src="{{ card.img_url }}"
-            alt="Photo of a Shiba Inu"
-          />
-          <mat-card-content>
-            <p>
-              {{ card.description }}
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container">
-  <div class="card-deck">
-    <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
-    <!-- <input
+  <input
     class="form-control me-2"
     type="search"
     placeholder="Search"
     aria-label="Search"
     [(ngModel)]="filtro"
-  /> -->
+  />
+  <div class="card-deck">
+    <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
 
     @for(product of filteredProducts; track $index){
-
     <div class="card border-info mb-2">
-      <!-- <img src="..." class="card-img-top" alt="..."> -->
-      <div class="card-body text-primary-emphasis">
-        <h5 class="card-title">{{ product.denominazione }}</h5>
-        <p class="card-text">{{ product.indirizzo }}</p>
-        <p class="card-text">
-          <small class="text-muted">{{ product.citta }}</small>
-        </p>
-      </div>
+      <app-product
+        [product]="product"
+        (myEvent)="handleEvent($event)"
+      ></app-product>
     </div>
     }
   </div>

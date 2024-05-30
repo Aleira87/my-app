@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  premimi(): void {
+  premimi(e : Event): void {
+    e.stopPropagation();
     alert("Continuo ad essere totalmente inutile!");
+    console.log("°°°°°°°°°°°°°°°°°°°°°°°°°à")
+    console.log(e)
+    
+    console.log(this)
   };
 }

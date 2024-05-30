@@ -1,12 +1,12 @@
 
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsService } from '../services/products.service';
 import { CommonModule } from '@angular/common';
-import { Product } from '../interfaces/product';
+
 
 
 @Component({
@@ -25,13 +25,6 @@ import { Product } from '../interfaces/product';
 })
 export class NavbarComponent {
 
-  // searchQuery: string = '';
-  // searchResults: Product[] = [];
-
-  // @Output() ProdottiCercati = new EventEmitter<Product[]>;
-
-  // @Output() query = new EventEmitter<string>();
-
   constructor(private productService: ProductsService) {}
   
   onSearch(event: Event): void {
@@ -39,23 +32,5 @@ export class NavbarComponent {
     this.productService.updateSearchTerm(input.value);
     console.log(input.value);
   }
-
-  // search() {
-
-    // this.query.emit(this.searchQuery);
-
-    // this.productService.searchProducts(this.searchQuery).subscribe(results => {
-    //   this.searchResults = results;
-    //   this.ProdottiCercati.emit(results);
-    //   console.log(results);
-    
-    // });
-  // constructor(private productService:ProductsService) {};
-  
-  // onSearch(event: Event) {
-  //   const input = event.target as HTMLInputElement;
-  //   this.productService.updateSearchTerm(input.value);
-  // }
-  // }
  }
 

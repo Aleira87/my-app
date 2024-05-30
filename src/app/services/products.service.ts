@@ -2,7 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,17 +16,13 @@ export class ProductsService {
  
   
   getProducts(): Observable<Product[]> { //Observable osserva la richiesta e appena arriva "risponde"
-    return this.http.get<Product[]>(this.url)}
+    return this.http.get<Product[]>(this.url)};
+
+  getProductsByCity(city: string):Observable<Product[]>{ // Oserverà ricerche in base alla città
+    return this.http.get<Product[]>(`${this.url}/${city}`)
+  };
 
   updateSearchTerm(term: string) {
     this.searchSubject.next(term);
   } 
-
-  // searchProducts(query: string): Observable<Product[]> {
-  //   return this.http.get<Product[]>(this.url).pipe(
-  //     map(products => products.filter(product =>
-  //       product.denominazione.toLowerCase().includes(query.toLowerCase())
-  //     ))
-  //   );
-// }  
 }
