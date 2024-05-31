@@ -1,0 +1,21 @@
+<div class="container">
+  <input
+    class="form-control me-2 m-3"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    [(ngModel)]="filtro"
+  />
+  <div class="card-deck">
+    <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
+
+    @for(product of filteredProducts; track $index){
+    <div class="card border-info mb-2">
+      <app-product
+        [product]="product"
+        (myEvent)="handleEvent($event)"
+      ></app-product>
+    </div>
+    }
+  </div>
+</div>
