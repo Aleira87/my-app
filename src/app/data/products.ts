@@ -1,30 +1,75 @@
 
-
-const dogs:Array<{title:string, subtitle:string, img_url:string, description:string, price:number}> = [{
-    title: "Shiba Inu",
-    subtitle: "dog breed",
-    img_url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-    description: "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
-    price: 660
-  },{
-    title: "Cinappi",
-    subtitle: "SRL",
-    img_url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-    description: "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
-    price: 7
-  }, {
-    title: "Puzzone",
-    subtitle: "Cane che puzza",
-    img_url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-    description: "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
-    price: 67
+let products = [
+  {
+    name: 'Arancina alla carne',
+    description: 'Riso, carne di manzo, piselli, salsa di pomodoro, zafferano',
+    img_url: 'https://example.com/images/arancina_carne.jpg',
+    price: 2.5,
+    restaurantId: 1,
   },
   {
-    title: "Il cane della Casa Blu",
-    subtitle: "Cane che puzza",
-    img_url: "https://material.angular.io/assets/img/examples/shiba2.jpg",
-    description: "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.",
-    price: 6655
-  }]
+    name: 'Pasta con le sarde',
+    description: 'Pasta, sarde fresche, finocchietto, pinoli, uvetta',
+    img_url: 'https://example.com/images/pasta_sarde.jpg',
+    price: 9,
+    restaurantId: 2,
+  },
+  {
+    name: 'Cannolo siciliano',
+    description: 'Cialda fritta, ricotta di pecora, zucchero, cioccolato, scorze d\'arancia',
+    img_url: 'https://example.com/images/cannolo.jpg',
+    price: 3,
+    restaurantId: 3,
+  },
+  {
+    name: 'Panelle',
+    description: 'Frittelle di farina di ceci',
+    img_url: 'https://example.com/images/panelle.jpg',
+    price: 1.5,
+    restaurantId: 4,
+  },
+  {
+    name: 'Sfincione',
+    description: 'Pizza alta con salsa di pomodoro, cipolle, acciughe, pangrattato',
+    img_url: 'https://example.com/images/sfincione.jpg',
+    price: 5,
+    restaurantId: 5,
+  },
+  {
+    name: 'Granita al limone',
+    description: 'Granita di limone con acqua, zucchero, succo di limone',
+    img_url: 'https://example.com/images/granita_limone.jpg',
+    price: 2,
+    restaurantId: 6,
+  },
+  {
+    name: 'Pane con la milza',
+    description: 'Panino con milza, caciocavallo, ricotta',
+    img_url: 'https://example.com/images/pane_milza.jpg',
+    price: 4,
+    restaurantId: 7,
+  },
+  {
+    name: 'Brioche con gelato',
+    description: 'Brioche artigianale con gelato a scelta',
+    img_url: 'https://example.com/images/brioche_gelato.jpg',
+    price: 3.5,
+    restaurantId: 8,
+  },
+  {
+    name: 'Caponata',
+    description: 'Melanzane, pomodori, olive, capperi, sedano, cipolle',
+    img_url: 'https://example.com/images/caponata.jpg',
+    price: 6,
+    restaurantId: 9,
+  },
+  {
+    name: 'Pasta al forno',
+    description: 'Anelletti con salsa di ragù e basilico',
+    img_url: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+    price: 8,
+    restaurantId: 10,
+  }
+];
 
-  export default dogs
+  export default products

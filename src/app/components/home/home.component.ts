@@ -9,9 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-    premimi(): void {
-    alert("Te l'avevo detto che sono inutile!");
-    
+ 
 
   // intervalHandler:any;
 
@@ -27,4 +25,4 @@ export class HomeComponent {
   // }
 
 }
-}
+

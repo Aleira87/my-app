@@ -1,14 +1,14 @@
 
-import { ProductsService } from './../services/products.service';
+import { ProductsService } from '../../services/products.service';
 import { LowerCasePipe, NgFor, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
-import dogs from '../data/products';
 import { FormsModule } from '@angular/forms';
-import { Product } from '../interfaces/product';
+import { Product } from '../../interfaces/product';
 import { ProductComponent } from '../product/product.component';
+import dogs from '../../data/shops';
 
 
 

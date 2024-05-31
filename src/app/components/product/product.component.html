@@ -1,11 +1,11 @@
 <a routerLink="/shop-details">
-  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <img src="https://picsum.photos/200/200" class="card-img-top" alt="cose" />
   <div class="card-body text-primary-emphasis">
     <h5 class="card-title">{{ product.denominazione }}</h5>
     <p class="card-text">{{ product.indirizzo }}</p>
     <p class="card-text">
       <small class="text-muted">{{ product.citta }}</small>
     </p>
-    <button class="btn btn-outline-info" (click)="emitEvent()">Cliccami</button>
+    <button class="btn btn-outline-info" (click)="emitEvent()">Dettagli</button>
   </div>
 </a>

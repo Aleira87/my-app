@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
-import { Product } from '../interfaces/product';
+import { Product } from '../../interfaces/product';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from '../products/products.component';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../../services/products.service';
 import { CommonModule } from '@angular/common';
 
 
