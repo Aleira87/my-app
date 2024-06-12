@@ -11,7 +11,12 @@
 
     @for(shop of filteredShops; track $index){
     <div class="card border-info mb-2">
-      <shop [shop]="[shop]" (myEvent)="handleEvent($event)"></shop>
+      {{ shop.citta }}
+      <br />
+      {{ shop.denominazione }}
+      <br />
+      {{ shop.indirizzo }}
+      <!-- <shop (myEvent)="handleEvent($event)">{{ shop }}</shop> -->
     </div>
     }
   </div>
