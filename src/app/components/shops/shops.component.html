@@ -11,7 +11,7 @@
 
     @for(shop of filteredShops; track $index){
     <div class="card border-info mb-2">
-      <app-shops [shop]="shop" (myEvent)="handleEvent($event)"></app-shops>
+      <shop [shop]="[shop]" (myEvent)="handleEvent($event)"></shop>
     </div>
     }
   </div>
