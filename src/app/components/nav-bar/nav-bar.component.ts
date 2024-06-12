@@ -6,6 +6,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsService } from '../../services/products.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 
 
@@ -24,8 +25,23 @@ import { CommonModule } from '@angular/common';
   styleUrl:"nav-bar.component.css" ,
 })
 export class NavbarComponent {
+  token: string | null = "";
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService,
+    private authService: AuthService
+  ) {}
+
+  ngOnInit() {
+    this.authService.token$.subscribe((token: any) => {
+      this.token = token;
+      console.log('Token changed:', this.token); // Aggiungi questo per il debug
+    })
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
   
   onSearch(event: Event): void {
     const input = event.target as HTMLInputElement;

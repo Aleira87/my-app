@@ -9,12 +9,9 @@
   <div class="card-deck">
     <!-- Il seguente input serve unicamente per creare una searchbar funzionante -->
 
-    @for(product of filteredProducts; track $index){
+    @for(shop of filteredShops; track $index){
     <div class="card border-info mb-2">
-      <app-product
-        [product]="product"
-        (myEvent)="handleEvent($event)"
-      ></app-product>
+      <app-shops [shop]="shop" (myEvent)="handleEvent($event)"></app-shops>
     </div>
     }
   </div>
